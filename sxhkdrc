@@ -1,0 +1,72 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	st
+
+# program launcher
+super + d
+	rofi -show drun -config $BERRY_CONFIG/rofi.rasi
+
+super + w
+    rofi -show window -config $BERRY_CONFIG/rofi.rasi
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	~/.config/berry/scripts/berry_brightness{ --inc, --dec}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	~/.config/berry/scripts/berry_volume{ --inc, --dec}
+	
+XF86AudioMute
+	~/.config/berry/scripts/berry_volume --toggle
+
+#
+# berry hotkeys
+#
+
+super + {h, j, k, l}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+super + shift +  {h, j, k, l}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+    berryc switch_workspace {9, 0, 1, 2, 3, 4, 5, 6, 7, 8}
+
+super + shift + {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+    berryc send_to_workspace {9, 0, 1, 2, 3, 4, 5, 6, 7, 8}
+
+super + m
+    berryc window_monocle
+
+super + f
+    berryc fullscreen
+
+super +  p
+    berryc snap_right
+
+super + o 
+    berryc snap_left
+
+super + n
+    berryc toggle_decorations
+
+super + Tab
+    berryc cycle_focus
+
+super + q
+    berryc window_close
+
+super + c
+    berryc window_center
+
+~button1
+    berryc pointer_focus

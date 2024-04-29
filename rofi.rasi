@@ -1,0 +1,149 @@
+configuration {
+    show-icons: true;
+    disable-history: true;
+    window-thumbnail: true;
+    cycle: false;
+}
+* {
+    separator:			    #CCCCCCFF;
+    foreground: 	            #FFFFFFFF;
+    input-background:               #F2F2F260;
+    entry-background:               transparent;
+    urgent-background:              #AC002560;
+    active-background:              #FFCB6B60;
+    window-background:              #B0B0B0E0;
+    selected-background:            #F2F2F280;
+    urgent-selected-background:     #AC0025C0;
+    active-selected-background:     #FFCB6BC0;
+}
+element {
+    padding: 8px 4px 8px 4px;
+    border-radius: 12px;
+    spacing: 8px ;
+    border:  0;
+}
+element normal.normal {
+    background-color: var(entry-background);
+    text-color:       var(foreground);
+}
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color:       var(foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color:       var(foreground);
+}
+element selected.normal {
+    background-color: var(selected-background);
+    text-color:       var(foreground);
+}
+element selected.urgent {
+    background-color: var(urgent-selected-background);
+    text-color:       var(foreground);
+}
+element selected.active {
+    background-color: var(active-selected-background);
+    text-color:       var(foreground);
+}
+element alternate.normal {
+    background-color: var(entry-background);
+    text-color:       var(foreground);
+}
+element alternate.urgent {
+    background-color: var(urgent-background);
+    text-color:       var(foreground);
+}
+element alternate.active {
+    background-color: var(active-background);
+    text-color:       var(foreground);
+}
+element-text {
+    background-color: transparent;
+    cursor:           inherit;
+    highlight:        inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: transparent;
+    size:             1.0000em ;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+window {
+    padding:          8px 16px 8px 16px;
+    background-color: var(window-background);
+    border: 0;
+    border-radius: 16px;
+    width: 720px;
+    height: 450px;
+    anchor: center;
+}
+mainbox {
+    padding: 0;
+    border:  0;
+}
+message {
+    border-color: var(separator);
+    border:       2px solid 0px 0px ;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    padding:      2px 0px 4px 0px ;
+    scrollbar:    true;
+    border-color: var(separator);
+    spacing:      2px ;
+    fixed-height: 0;
+    border:       1px solid 0px 0px ;
+}
+scrollbar {
+    width:        0px ;
+    padding:      0;
+    handle-width: 0px ;
+    border:       0;
+    handle-color: transparent;
+}
+sidebar {
+    border-color: var(foreground);
+    border:       2px dash 0px 0px ;
+}
+button {
+	action: "ok";
+	str: "  ";
+	font: "SansMono Nerd Font 15";
+	expand: false;
+	text-color: var(foreground);
+	background-color: transparent;
+	vertical-align: 0.7;
+	horizontal-align: 0.5;
+}
+button selected {
+    background-color: var(selected-background);
+    text-color:       var(foreground);
+}
+inputbar {
+    margin:    0px 64px 8px 64px;
+    padding:   8px 16px 8px 16px;
+    expand: false;
+    border-radius: 	16px;
+    text-color: var(foreground);
+    background-color: transparent;
+    children:   [ "button", "entry", "case-indicator" ];
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(foreground);
+}
+entry {
+    text-color:        var(foreground);
+    cursor:            text;
+    padding: 0px 0px 0px 8px;
+    placeholder-color: var(foreground);
+    placeholder:       "Type to search";
+}
+prompt {
+    spacing:    0;
+    text-color: var(foreground);
+}

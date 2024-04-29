@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set_wallpaper() {
+	
+	cp $1 $BERRY_CONFIG/.wallpaper
+	hsetroot -fill $BERRY_CONFIG/.wallpaper 1> /dev/null && echo "Wallpaper set!"
+	exit 0
+}
+
+if [ $# -lt 1 ]; then
+	echo "No wallpaper provided"
+	exit -1
+fi
+
+BG_PATH=$(realpath $1)
+identify $BG_PATH 1>/dev/null 2>/dev/null && set_wallpaper $BG_PATH
+echo $BG_PATH is not valid image!
